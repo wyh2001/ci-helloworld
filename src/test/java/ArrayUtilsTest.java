@@ -45,4 +45,19 @@ public class ArrayUtilsTest {
     public void testOddOrPositiveBothPositivesAndNegatives() {
         assertEquals(3, ArrayUtils.oddOrPos(new int[]{-3, -2, 0, 1, 4}));
     }
+
+    @Test
+    public void testCountOfWithEmptyArray() {
+        assertEquals(0, ArrayUtils.countOf(new int[]{}, 2));
+    }
+
+    @Test
+    public void testCountOfWithNotEmptyArrayNoMatch() {
+        assertEquals(0, ArrayUtils.countOf(new int[]{1}, 2));
+    }
+
+    @Test
+    public void testCountOfWithNotEmptyArrayMatch() {
+        assertEquals(1, ArrayUtils.countOf(new int[]{1, 2}, 2));
+    }
 }
